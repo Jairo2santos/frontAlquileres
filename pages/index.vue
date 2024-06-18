@@ -1,25 +1,21 @@
 <template>
-    <v-app>
-      <v-main>
-        <v-container>
-          <v-row>
-            <v-col>
-              <v-card>
-                <v-card-title>Bienvenido a Vuetify con Nuxt 3</v-card-title>
-                <v-card-text>
-                  Este es un ejemplo de una tarjeta usando Vuetify en un proyecto Nuxt 3.
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-main>
-    </v-app>
-  </template>
-  
+  <div class="home-container flex flex-col items-center   justify-center min-h-screen bg-cover bg-center">
+    <h1 class="title xs:mt-40  text-4xl lg:text-5xl font-extrabold ml-8 text-blue-900 sm:mt-20">
+      Buscador de alquileres
+    </h1>
+    <div class="flex flex-col-reverse lg:flex-row items-center justify-center w-full  p-8">
+      <img src="/assets/css/images/mudados.png" alt="Alquiler Image" class="h-auto rounded-lg mb-8  lg:mb-0" />
+
+        <Searcher  class="lg:w-2/3 lg:mb-96 "/>
+   
+    </div>
+  </div>
+</template>
+
   <script setup lang="ts">
   </script>
   
   <style scoped>
+
   </style>
   

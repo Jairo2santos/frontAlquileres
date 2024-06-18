@@ -1,19 +1,27 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve } from 'path';
 
 export default defineNuxtConfig({
-  css:[
-    'vuetify/lib/styles/main.sass',
-  '@mdi/font/css/materialdesignicons.min.css',
-  ],
-  build: {
-    transpile: ['vuetify'],
+  alias: {
+    '@': resolve(__dirname, '/')
   },
-  vite: {
-    define: {
-      'process.env.DEBUG': false,
+  css: ['~/assets/css/main.css'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    'nuxt-mdi',
+    'nuxt-icon-tw',
+    '@pinia/nuxt'
+  ],
+  nuxtIcon: {
+    size: '24px', // default <Icon> size applied
+    class: 'icon', // default <Icon> class applied
+    aliases: {
+      nuxt: 'logos:nuxt-icon',
     },
   },
-  devtools: { enabled: true },
-
-
-})
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+});
